@@ -9,7 +9,7 @@
 ###
 
 <p align="center">
-  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=32CD32&width=435&lines=Computer Engineering Student at SCU;AI Technical Member @ SCU IEEE;Software Head @ SCU Racing Team" alt="Typing SVG" /></a>
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=32CD32&width=435&lines=Computer+Engineering+Student+at+SCU;AI+Technical+Member+@+SCU+IEEE;Software+Head+@+SCU+Racing+Team" alt="Typing SVG" /></a>
 </p>
 
 ###
@@ -189,10 +189,3 @@ if __name__ == '__main__':
 
 ----
 
-###
-
-<br clear="both">
-
-<img src="https://raw.githubusercontent.com/ZiadMD/ZiadMD/output/snake.svg" alt="Snake animation" />
-
-###
