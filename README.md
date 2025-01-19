@@ -32,8 +32,8 @@ class ZiadMohamedGamal:
                                  'Taming Robots with ROS1'],
             '- 🫂 Always Down For': 'Helping folks with random tech experiments. The weirder, the better!',
             '- 🌐 Stalk Me Here': {
-                'GitHub': 'https://github.com/your-username',
-                'LinkedIn': 'https://linkedin.com/in/your-profile'
+                'GitHub': 'https://github.com/ZiadMD',
+                'LinkedIn': 'https://www.linkedin.com/in/ziad-sheashaa-89797b15b'
             },
             '- 🤓 Fun Fact': 'I once tried to debug a sandwich. Spoiler: It wasn’t toasted.'
         }
