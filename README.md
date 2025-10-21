@@ -56,7 +56,7 @@ if __name__ == '__main__':
 config:
   theme: redux
 ---
-flowchart 
+flowchart TD
 
   PL(("Programming Languages"))
 
