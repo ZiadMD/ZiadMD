@@ -51,26 +51,18 @@ if __name__ == '__main__':
 
 ###
 
-  theme: redux
 ```mermaid
 ---
 config:
   theme: redux
 ---
-flowchart TD
-  skills(("Skills"))
+flowchart 
 
   PL(("Programming Languages"))
-  FW(("Frameworks & Libraries"))
+  FW(("Frameworks"))
   TO(("Tools"))
   OS(("Operating Systems"))
   IDE(("IDEs"))
-
-  skills --> PL
-  skills --> FW
-  skills --> TO
-  skills --> OS
-  skills --> IDE
 
   %% Programming Languages
   PL --- cpp_logo[" "]
@@ -121,8 +113,6 @@ flowchart TD
   git_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", h: 40, w: 40, pos: "b" }
   TO --- anaconda_logo[" "]
   anaconda_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original.svg", h: 40, w: 40, pos: "b" }
-  TO --- diagrams_logo[" "]
-  diagrams_logo@{ img: "https://raw.githubusercontent.com/jgraph/mxgraph/master/src/images/diagrams.net-icon.svg", h: 40, w: 40, pos: "b" }
 
   %% Operating Systems
   OS --- linux_logo[" "]
@@ -141,6 +131,7 @@ flowchart TD
   vscode_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", h: 30, w: 30, pos: "b" }
   IDE --- vs_logo[" "]
   vs_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg", h: 30, w: 30, pos: "b" }
+
 ```
 
 ###
