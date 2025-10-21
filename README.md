@@ -1,8 +1,4 @@
-<div align="center">
-  <img src="https://profile-counter.glitch.me/ZiadMD/count.svg?"  />
-</div>
 
-###
 
 <h2 align="left">Hi there, I'm Ziad Mohamed Gamal Mohamed 👋</h2>
 
@@ -24,16 +20,23 @@ class ZiadMohamedGamal:
         self.bio = {
             '- 🎓 Geek-in-Training': 'Computer Engineering Student at SCU',
             '- 🧠 Current Hats': {
-                'AI Wizardry': 'AI Technical Member @ SCU IEEE',
-                'Autonomous Overlord': 'Software Head @ SCU Racing Team'
+                'AI Wizardry': 'AI Technical Member at SCU IEEE',
+                'Autonomous Overlord': 'Software Head at SCU Racing Team',
+                'AI Strategist': 'AI Vice Head at SCU Microsoft'
             },
-            '- 🛠️ Cooking Up': 'Cascade Classifier Magic with C++ + Qt',
-            '- 🚀 Leveling Up': ['Front-End Sorcery (HTML, CSS, JS)', 
-                                 'Taming Robots with ROS1'],
+            '- 🛠️ Cooking Up': 'AI Automation Spells with Python + LangChain',
+            '- 🚀 Leveling Up': [
+                'Mastering Cloud Summoning (Google Cloud, APIs)',
+                'Crafting Smarter Reasoning Models with LLMs',
+                'Building Web Sorcery using FastAPI + JS',
+                'Exploring Robotics Charm with ROS2'
+            ],
             '- 🫂 Always Down For': 'Helping folks with random tech experiments. The weirder, the better!',
             '- 🌐 Stalk Me Here': {
                 'GitHub': 'https://github.com/ZiadMD',
-                'LinkedIn': 'https://www.linkedin.com/in/ziad-sheashaa-89797b15b'
+                'LinkedIn': 'https://www.linkedin.com/in/ziad-sheashaa-89797b15b',
+                'IG': 'https://www.instagram.com/ziad._.moh/',
+                'FB': 'https://www.facebook.com/ziad.mohamed.gamal.792281'
             },
             '- 🤓 Fun Fact': 'I once tried to debug a sandwich. Spoiler: It wasn’t toasted.'
         }
@@ -41,7 +44,6 @@ class ZiadMohamedGamal:
 if __name__ == '__main__':
     import pprint
     pprint.pprint(ZiadMohamedGamal().__dict__)
-
 ```
 
 </div>
@@ -49,95 +51,97 @@ if __name__ == '__main__':
 
 ###
 
-<h2 align="left">Skills</h2>
+  theme: redux
+```mermaid
+---
+config:
+  theme: redux
+---
+flowchart TD
+  skills(("Skills"))
 
-###
+  PL(("Programming Languages"))
+  FW(("Frameworks & Libraries"))
+  TO(("Tools"))
+  OS(("Operating Systems"))
+  IDE(("IDEs"))
 
-<h3 align="left">Programming Languages</h3>
+  skills --> PL
+  skills --> FW
+  skills --> TO
+  skills --> OS
+  skills --> IDE
 
-###
+  %% Programming Languages
+  PL --- cpp_logo[" "]
+  cpp_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg", h: 40, w: 40, pos: "b" }
+  PL --- py_logo[" "]
+  py_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", h: 40, w: 40, pos: "b" }
+  PL --- bash_logo[" "]
+  bash_logo@{ img: "https://cdn.simpleicons.org/gnubash/4EAA25", h: 40, w: 40, pos: "b" }
+  PL --- html_logo[" "]
+  html_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", h: 40, w: 40, pos: "b" }
+  PL --- css_logo[" "]
+  css_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", h: 40, w: 40, pos: "b" }
+  PL --- js_logo[" "]
+  js_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg", h: 40, w: 40, pos: "b" }
+  PL --- lua_logo[" "]
+  lua_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg", h: 40, w: 40, pos: "b" }
+  PL --- ts_logo[" "]
+  ts_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg", h: 40, w: 40, pos: "b" }
+  PL --- md_logo[" "]
+  md_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg", h: 40, w: 40, pos: "b" }
 
-<div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="30" alt="cplusplus logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/gnubash/4EAA25" height="30" alt="bash logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" alt="html5 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" alt="css3 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" height="30" alt="markdown logo"  />
-</div>
+  %% Frameworks & Libraries
+  FW --- pandas_logo[" "]
+  pandas_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg", h: 40, w: 40, pos: "b" }
+  FW --- numpy_logo[" "]
+  numpy_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg", h: 40, w: 40, pos: "b" }
+  FW --- opencv_logo[" "]
+  opencv_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg", h: 40, w: 40, pos: "b" }
+  FW --- tf_logo[" "]
+  tf_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg", h: 40, w: 40, pos: "b" }
+  FW --- torch_logo[" "]
+  torch_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg", h: 40, w: 40, pos: "b" }
+  FW --- ros_logo[" "]
+  ros_logo@{ img: "https://cdn.simpleicons.org/ros/22314E", h: 40, w: 40, pos: "b" }
+  FW --- qt_logo[" "]
+  qt_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qt/qt-original.svg", h: 40, w: 40, pos: "b" }
+  FW --- fastapi_logo[" "]
+  fastapi_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg", h: 40, w: 40, pos: "b" }
+  FW --- nextjs_logo[" "]
+  nextjs_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg", h: 40, w: 40, pos: "b" }
 
-###
+  %% Tools
+  TO --- jupyter_logo[" "]
+  jupyter_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg", h: 40, w: 40, pos: "b" }
+  TO --- cmake_logo[" "]
+  cmake_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cmake/cmake-original.svg", h: 40, w: 40, pos: "b" }
+  TO --- git_logo[" "]
+  git_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", h: 40, w: 40, pos: "b" }
+  TO --- anaconda_logo[" "]
+  anaconda_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original.svg", h: 40, w: 40, pos: "b" }
+  TO --- diagrams_logo[" "]
+  diagrams_logo@{ img: "https://raw.githubusercontent.com/jgraph/mxgraph/master/src/images/diagrams.net-icon.svg", h: 40, w: 40, pos: "b" }
 
-<h3 align="left">Frame works</h3>
+  %% Operating Systems
+  OS --- linux_logo[" "]
+  linux_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg", h: 30, w: 30, pos: "b" }
+  OS --- windows_logo[" "]
+  windows_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg", h: 30, w: 30, pos: "b" }
+  OS --- ubuntu_logo[" "]
+  ubuntu_logo@{ img: "https://cdn.simpleicons.org/ubuntu/E95420", h: 30, w: 30, pos: "b" }
 
-###
-
-<div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" height="40" alt="pandas logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="40" alt="numpy logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" height="40" alt="opencv logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" height="40" alt="tensorflow logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" height="40" alt="pytorch logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/ros/22314E" height="40" alt="ros logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qt/qt-original.svg" height="40" alt="qt logo"  />
-</div>
-
-###
-
-<h3 align="left">Tools</h3>
-
-###
-
-<div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" height="30" alt="jupyter logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cmake/cmake-original.svg" height="30" alt="cmake logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="30" alt="git logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original.svg" height="30" alt="anaconda logo"  />
-</div>
-
-###
-
-<h3 align="left">Operating Systems</h3>
-
-###
-
-<div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="30" alt="linux logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" height="30" alt="windows8 logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/ubuntu/E95420" height="30" alt="ubuntu logo"  />
-</div>
-
-###
-
-<h3 align="left">IDEs</h3>
-
-###
-
-<div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" height="30" alt="pycharm logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" height="30" alt="intellij logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="30" alt="vscode logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" height="30" alt="visualstudio logo"  />
-</div>
+  %% IDEs
+  IDE --- pycharm_logo[" "]
+  pycharm_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg", h: 30, w: 30, pos: "b" }
+  IDE --- intellij_logo[" "]
+  intellij_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg", h: 30, w: 30, pos: "b" }
+  IDE --- vscode_logo[" "]
+  vscode_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", h: 30, w: 30, pos: "b" }
+  IDE --- vs_logo[" "]
+  vs_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg", h: 30, w: 30, pos: "b" }
+```
 
 ###
 <h2 align="left">Contact me</h2>
@@ -145,6 +149,9 @@ if __name__ == '__main__':
 <div align="center">
   <a href="https://www.instagram.com/ziad._.moh?igsh=empkdjB3dHF4eGk5" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="instagram logo"  />
+  </a>
+  <a href="https://www.facebook.com/ziad.mohamed.gamal.792281" target="_blank">
+  <img src="https://img.shields.io/static/v1?message=Facebook&logo=facebook&label=&color=1877F2&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="facebook logo"  />
   </a>
   <a href="https://discordapp.com/users/_pymage_" target="_blank">
   <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
@@ -158,7 +165,7 @@ if __name__ == '__main__':
 </div>
 
 ###
-<br><br>
+<br>
 
 <div align = "center">
 
@@ -170,22 +177,18 @@ if __name__ == '__main__':
 	<a href="https://github.com/piyushsuthar/github-readme-quotes"> <img alt = "Quote" src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&animation=grow_out_in&quoteCategory=programming">
 </p> -->
 
-###
 
-<div align="center">
+<!-- <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=ZiadMD&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dark&locale=en&hide_border=false" height="150" alt="stats graph"  />
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=ZiadMD&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dark&hide_border=false" height="150" alt="languages graph"  />
-</div>
+</div> -->
 
 ###
 
 ----
 
-<details><summary><h3>⚡ Recent GitHub Activity</h3></summary>	
-----
+<summary><h3>⚡ Recent GitHub Activity</h3></summary>
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=ZiadMD&theme=github-compact&area=true&hide_border=true)(https://github.com/ashutosh00710/github-readme-activity-graph)">
  
-</details>
 
 ----
-
