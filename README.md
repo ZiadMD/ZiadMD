@@ -59,10 +59,6 @@ config:
 flowchart 
 
   PL(("Programming Languages"))
-  FW(("Frameworks"))
-  TO(("Tools"))
-  OS(("Operating Systems"))
-  IDE(("IDEs"))
 
   %% Programming Languages
   PL --- cpp_logo[" "]
@@ -83,55 +79,6 @@ flowchart
   ts_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg", h: 40, w: 40, pos: "b" }
   PL --- md_logo[" "]
   md_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg", h: 40, w: 40, pos: "b" }
-
-  %% Frameworks & Libraries
-  FW --- pandas_logo[" "]
-  pandas_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg", h: 40, w: 40, pos: "b" }
-  FW --- numpy_logo[" "]
-  numpy_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg", h: 40, w: 40, pos: "b" }
-  FW --- opencv_logo[" "]
-  opencv_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg", h: 40, w: 40, pos: "b" }
-  FW --- tf_logo[" "]
-  tf_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg", h: 40, w: 40, pos: "b" }
-  FW --- torch_logo[" "]
-  torch_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg", h: 40, w: 40, pos: "b" }
-  FW --- ros_logo[" "]
-  ros_logo@{ img: "https://cdn.simpleicons.org/ros/22314E", h: 40, w: 40, pos: "b" }
-  FW --- qt_logo[" "]
-  qt_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qt/qt-original.svg", h: 40, w: 40, pos: "b" }
-  FW --- fastapi_logo[" "]
-  fastapi_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg", h: 40, w: 40, pos: "b" }
-  FW --- nextjs_logo[" "]
-  nextjs_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg", h: 40, w: 40, pos: "b" }
-
-  %% Tools
-  TO --- jupyter_logo[" "]
-  jupyter_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg", h: 40, w: 40, pos: "b" }
-  TO --- cmake_logo[" "]
-  cmake_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cmake/cmake-original.svg", h: 40, w: 40, pos: "b" }
-  TO --- git_logo[" "]
-  git_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", h: 40, w: 40, pos: "b" }
-  TO --- anaconda_logo[" "]
-  anaconda_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original.svg", h: 40, w: 40, pos: "b" }
-
-  %% Operating Systems
-  OS --- linux_logo[" "]
-  linux_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg", h: 30, w: 30, pos: "b" }
-  OS --- windows_logo[" "]
-  windows_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg", h: 30, w: 30, pos: "b" }
-  OS --- ubuntu_logo[" "]
-  ubuntu_logo@{ img: "https://cdn.simpleicons.org/ubuntu/E95420", h: 30, w: 30, pos: "b" }
-
-  %% IDEs
-  IDE --- pycharm_logo[" "]
-  pycharm_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg", h: 30, w: 30, pos: "b" }
-  IDE --- intellij_logo[" "]
-  intellij_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg", h: 30, w: 30, pos: "b" }
-  IDE --- vscode_logo[" "]
-  vscode_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", h: 30, w: 30, pos: "b" }
-  IDE --- vs_logo[" "]
-  vs_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg", h: 30, w: 30, pos: "b" }
-
 ```
 
 ###
