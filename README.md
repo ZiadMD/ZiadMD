@@ -57,9 +57,7 @@ config:
   theme: redux
 ---
 flowchart TD
-
   PL(("Programming Languages"))
-
   %% Programming Languages
   PL --- cpp_logo[" "]
   cpp_logo@{ img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg", h: 40, w: 40, pos: "b" }
