@@ -2,59 +2,87 @@
   "username": "ZiadMD",
   "first_name": "Ziad",
   "last_name": "Mohamed",
-  "kicker": "AI ENGINEER · AGENTS, VISION & AUTOMATION",
-  "tagline": ["I build AI agents that do real work, and the", "tools that show you how they think."],
-  "terminal": [
-    ["cmd", "whoami"],
-    ["out", "ziad, ai engineer"],
-    ["cmd", "cat focus.txt"],
-    ["out", "llm agents       langgraph, langchain"],
-    ["out", "computer vision  pytorch, opencv"],
-    ["out", "production ai    fastapi, aws, gcp"],
-    ["cmd", "cat fun_fact.txt"],
-    ["out", "once tried to debug a sandwich."],
-    ["out", "it wasn't toasted."]
+  "kicker": "AI ENGINEER",
+  "tagline": [
+    "I build AI agents that do real work,",
+    "and the tools that show how they think."
   ],
-  "roles": [
+  "link": "github.com/ZiadMD",
+  "tiles": [
     {
-      "label": "AGENTS",
-      "title": "LLM Agents",
-      "tools": "LangGraph · LangChain",
-      "blurb": "Multi-step agents that plan, call tools and check their own work."
+      "label": "BUILD",
+      "value": "live:repos",
+      "word": "repos",
+      "url": "https://github.com/ZiadMD?tab=repositories",
+      "blurb": "Agents, vision models and dev tools, built in the open."
     },
     {
-      "label": "VISION",
-      "title": "Computer Vision",
-      "tools": "PyTorch · OpenCV",
-      "blurb": "Models that read screens and roads, from training to deployment."
+      "label": "SHIP",
+      "value": "live:contributions",
+      "word": "commits",
+      "url": "https://github.com/ZiadMD",
+      "blurb": "Pushed to GitHub in the last 12 months, counted daily."
     },
     {
-      "label": "SHIPPING",
-      "title": "Production AI",
-      "tools": "FastAPI · AWS · GCP",
-      "blurb": "APIs, cloud deploys and the tracing to see what a model actually did."
+      "label": "FOCUS",
+      "value": "3",
+      "word": "fields",
+      "url": "https://github.com/ZiadMD/agent-xray",
+      "blurb": "LLM agents, computer vision and production AI."
     }
   ],
   "stack": [
     [
       "ai / ml",
-      ["PyTorch", "TensorFlow", "LangChain", "LangGraph", "OpenCV", "NumPy", "Pandas"]
+      [
+        "PyTorch",
+        "TensorFlow",
+        "LangChain",
+        "LangGraph",
+        "OpenCV",
+        "NumPy",
+        "Pandas"
+      ]
     ],
     [
       "languages",
-      ["Python", "C++", "TypeScript", "JavaScript", "Bash", "Lua"]
+      [
+        "Python",
+        "C++",
+        "TypeScript",
+        "JavaScript",
+        "Bash",
+        "Lua"
+      ]
     ],
     [
       "web / cloud",
-      ["FastAPI", "Next.js", "Google Cloud", "AWS"]
+      [
+        "FastAPI",
+        "Next.js",
+        "Google Cloud",
+        "AWS"
+      ]
     ],
     [
       "robotics",
-      ["ROS 2", "CoppeliaSim", "Arduino", "Qt", "CMake"]
+      [
+        "ROS 2",
+        "CoppeliaSim",
+        "Arduino",
+        "Qt",
+        "CMake"
+      ]
     ],
     [
       "daily",
-      ["Linux", "Git", "Jupyter", "VS Code", "PyCharm"]
+      [
+        "Linux",
+        "Git",
+        "Jupyter",
+        "VS Code",
+        "PyCharm"
+      ]
     ]
   ],
   "repos": [

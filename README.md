@@ -3,13 +3,14 @@
      Spacing is baked into the SVGs: keep this block free of blank lines, and keep each
      row of three cards on one line with no spaces between them. -->
 <div align="center">
-<img src="./cards/hero.svg" width="100%" alt="Ziad Mohamed. AI engineer. I build AI agents that do real work, and the tools that show you how they think." /><br>
-<img src="./cards/role-1.svg" width="33.333%" alt="LLM Agents: LangGraph, LangChain" /><img src="./cards/role-2.svg" width="33.333%" alt="Computer Vision: PyTorch, OpenCV" /><img src="./cards/role-3.svg" width="33.333%" alt="Production AI: FastAPI, AWS, GCP" /><br>
-<img src="./cards/heatmap.svg" width="100%" alt="Contribution graph, refreshed daily" /><br>
-<img src="./cards/activity.svg" width="100%" alt="Contributions in the last 12 months by month, with streaks and busiest day" /><br>
-<img src="./cards/stack.svg" width="100%" alt="Tech stack: PyTorch, LangChain, LangGraph, Python, C++, TypeScript, FastAPI and more" /><br>
-<img src="./cards/projects.svg" width="100%" alt="What I'm building" /><br>
-<a href="https://github.com/ZiadMD/agent-xray"><img src="./cards/repo-1.svg" width="33.333%" alt="agent-xray" /></a><a href="https://github.com/ZiadMD/ScreenSeekeR-Desktop-Automation"><img src="./cards/repo-2.svg" width="33.333%" alt="ScreenSeekeR" /></a><a href="https://github.com/ZiadMD/EVER24-Remastered"><img src="./cards/repo-3.svg" width="33.333%" alt="EVER24-Remastered" /></a>
+<a href="https://github.com/ZiadMD"><img src="./cards/hero.svg" width="100%" alt="Ziad Mohamed. AI engineer. I build AI agents that do real work, and the tools that show how they think." /></a><br>
+<img src="./cards/heatmap.svg" width="100%" alt="Ziad's contribution graph, in blue, refreshed daily" /><br>
+<img src="./cards/activity.svg" width="100%" alt="Contributions in the last 12 months, by month, with streak and busiest day" /><br>
+<a href="https://github.com/ZiadMD?tab=repositories"><img src="./cards/tile-1.svg" width="33.333%" alt="BUILD: public repos" /></a><a href="https://github.com/ZiadMD"><img src="./cards/tile-2.svg" width="33.333%" alt="SHIP: commits in the last 12 months" /></a><a href="https://github.com/ZiadMD/agent-xray"><img src="./cards/tile-3.svg" width="33.333%" alt="FOCUS: LLM agents, computer vision and production AI" /></a><br>
+<picture><source media="(prefers-color-scheme: dark)" srcset="./cards/title-coding-dark.svg" /><img src="./cards/title-coding-light.svg" width="100%" alt="What I'm coding" /></picture><br>
+<a href="https://github.com/ZiadMD/agent-xray"><img src="./cards/repo-1.svg" width="33.333%" alt="agent-xray" /></a><a href="https://github.com/ZiadMD/ScreenSeekeR-Desktop-Automation"><img src="./cards/repo-2.svg" width="33.333%" alt="ScreenSeekeR" /></a><a href="https://github.com/ZiadMD/EVER24-Remastered"><img src="./cards/repo-3.svg" width="33.333%" alt="EVER24-Remastered" /></a><br>
+<picture><source media="(prefers-color-scheme: dark)" srcset="./cards/title-stack-dark.svg" /><img src="./cards/title-stack-light.svg" width="100%" alt="What I use" /></picture><br>
+<img src="./cards/stack.svg" width="100%" alt="Tech stack: PyTorch, LangChain, LangGraph, OpenCV, Python, C++, TypeScript, FastAPI, AWS and more" />
 </div>
 
 <p align="center">
