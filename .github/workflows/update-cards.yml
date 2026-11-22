@@ -1,0 +1,40 @@
+name: Update profile cards
+
+# Redraws the README cards from real data: daily, on every push to main, and on demand.
+
+"on":
+  schedule:
+    - cron: "23 4 * * *"   # ~04:23 UTC every day
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths-ignore: ["cards/**", "data/contributions.json"]
+
+permissions:
+  contents: write
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r scripts/requirements.txt
+
+      - name: Fetch contribution calendar (public, no token)
+        run: python scripts/fetch_contributions.py
+
+      - name: Draw cards
+        run: python scripts/render_cards.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit the new cards
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh profile cards [skip ci]"
+          file_pattern: "cards/*.svg data/contributions.json"

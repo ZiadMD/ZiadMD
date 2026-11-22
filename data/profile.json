@@ -1,0 +1,44 @@
+{
+  "username": "ZiadMD",
+  "first_name": "Ziad",
+  "last_name": "Mohamed",
+  "kicker": "COMPUTER ENGINEERING @ SUEZ CANAL UNIVERSITY",
+  "tagline": [
+    "I build AI agents, software for a driverless",
+    "race car, and tools that show how both think."
+  ],
+  "terminal": [
+    ["cmd", "whoami"],
+    ["out", "ziad, ai + robotics engineer"],
+    ["cmd", "cat roles.txt"],
+    ["out", "ai technical member  @ IEEE SCU"],
+    ["out", "software head        @ SCU Racing"],
+    ["out", "ai vice head         @ Microsoft SCU"],
+    ["cmd", "cat fun_fact.txt"],
+    ["out", "once tried to debug a sandwich."],
+    ["out", "it wasn't toasted."]
+  ],
+  "roles": [
+    {"label": "AI", "org": "IEEE SCU", "title": "AI Technical Member",
+     "blurb": "Agents, LLM reasoning and automation with Python and LangChain."},
+    {"label": "AUTONOMY", "org": "SCU Racing Team", "title": "Software Head",
+     "blurb": "Leading the software for an autonomous race car, built on ROS 2."},
+    {"label": "COMMUNITY", "org": "Microsoft SCU", "title": "AI Vice Head",
+     "blurb": "Helping students build with AI, and always up for weird experiments."}
+  ],
+  "stack": [
+    ["languages", ["Python", "C++", "TypeScript", "JavaScript", "Bash", "Lua"]],
+    ["ai / data", ["PyTorch", "TensorFlow", "LangChain", "LangGraph", "OpenCV", "NumPy", "Pandas"]],
+    ["robotics", ["ROS 2", "CoppeliaSim", "Arduino", "Qt", "CMake"]],
+    ["web / cloud", ["FastAPI", "Next.js", "Google Cloud", "AWS"]],
+    ["daily", ["Linux", "Git", "Jupyter", "VS Code", "PyCharm"]]
+  ],
+  "repos": [
+    {"name": "agent-xray", "lang": "Python",
+     "desc": "Watch any LangGraph app think: a live 3D view of your agent graph, with replay."},
+    {"name": "ScreenSeekeR-Desktop-Automation", "title": "ScreenSeekeR", "lang": "Python",
+     "desc": "Vision-based Windows desktop automation that finds UI elements from plain language."},
+    {"name": "EVER24-Remastered", "lang": "Python",
+     "desc": "The 2024 racing stack rewritten from ROS 1 to ROS 2, package by package."}
+  ]
+}
