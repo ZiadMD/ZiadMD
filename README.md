@@ -14,5 +14,5 @@
 </div>
 
 <p align="center">
-<a href="https://ziad-sheashaa.me">ziad-sheashaa.me</a> &nbsp;/&nbsp; <a href="https://www.linkedin.com/in/ziad-sheashaa-89797b15b/">linkedin</a> &nbsp;/&nbsp; <a href="https://www.instagram.com/ziad._.moh/">instagram</a> &nbsp;/&nbsp; <a href="https://www.facebook.com/ziad.mohamed.gamal.792281">facebook</a> &nbsp;/&nbsp; <a href="https://discordapp.com/users/_pymage_">discord</a> &nbsp;/&nbsp; <a href="mailto:ziadmohamedgamal25@gmail.com">email</a>
+<a href="https://ziad-sheashaa.me">ziad-sheashaa.me</a> &nbsp;/&nbsp; <a href="https://www.linkedin.com/in/ziad-sheashaa/">linkedin</a> &nbsp;/&nbsp; <a href="https://www.instagram.com/ziad._.moh/">instagram</a> &nbsp;/&nbsp; <a href="https://www.facebook.com/ziad.mohamed.gamal.792281">facebook</a> &nbsp;/&nbsp; <a href="https://discordapp.com/users/_pymage_">discord</a> &nbsp;/&nbsp; <a href="mailto:ziadmohamedgamal25@gmail.com">email</a>
 </p>
