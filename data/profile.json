@@ -2,43 +2,77 @@
   "username": "ZiadMD",
   "first_name": "Ziad",
   "last_name": "Mohamed",
-  "kicker": "COMPUTER ENGINEERING @ SUEZ CANAL UNIVERSITY",
-  "tagline": [
-    "I build AI agents, software for a driverless",
-    "race car, and tools that show how both think."
-  ],
+  "kicker": "AI ENGINEER · AGENTS, VISION & AUTOMATION",
+  "tagline": ["I build AI agents that do real work, and the", "tools that show you how they think."],
   "terminal": [
     ["cmd", "whoami"],
-    ["out", "ziad, ai + robotics engineer"],
-    ["cmd", "cat roles.txt"],
-    ["out", "ai technical member  @ IEEE SCU"],
-    ["out", "software head        @ SCU Racing"],
-    ["out", "ai vice head         @ Microsoft SCU"],
+    ["out", "ziad, ai engineer"],
+    ["cmd", "cat focus.txt"],
+    ["out", "llm agents       langgraph, langchain"],
+    ["out", "computer vision  pytorch, opencv"],
+    ["out", "production ai    fastapi, aws, gcp"],
     ["cmd", "cat fun_fact.txt"],
     ["out", "once tried to debug a sandwich."],
     ["out", "it wasn't toasted."]
   ],
   "roles": [
-    {"label": "AI", "org": "IEEE SCU", "title": "AI Technical Member",
-     "blurb": "Agents, LLM reasoning and automation with Python and LangChain."},
-    {"label": "AUTONOMY", "org": "SCU Racing Team", "title": "Software Head",
-     "blurb": "Leading the software for an autonomous race car, built on ROS\u00a02."},
-    {"label": "COMMUNITY", "org": "Microsoft SCU", "title": "AI Vice Head",
-     "blurb": "Helping students build with AI, and always up for weird experiments."}
+    {
+      "label": "AGENTS",
+      "title": "LLM Agents",
+      "tools": "LangGraph · LangChain",
+      "blurb": "Multi-step agents that plan, call tools and check their own work."
+    },
+    {
+      "label": "VISION",
+      "title": "Computer Vision",
+      "tools": "PyTorch · OpenCV",
+      "blurb": "Models that read screens and roads, from training to deployment."
+    },
+    {
+      "label": "SHIPPING",
+      "title": "Production AI",
+      "tools": "FastAPI · AWS · GCP",
+      "blurb": "APIs, cloud deploys and the tracing to see what a model actually did."
+    }
   ],
   "stack": [
-    ["languages", ["Python", "C++", "TypeScript", "JavaScript", "Bash", "Lua"]],
-    ["ai / data", ["PyTorch", "TensorFlow", "LangChain", "LangGraph", "OpenCV", "NumPy", "Pandas"]],
-    ["robotics", ["ROS 2", "CoppeliaSim", "Arduino", "Qt", "CMake"]],
-    ["web / cloud", ["FastAPI", "Next.js", "Google Cloud", "AWS"]],
-    ["daily", ["Linux", "Git", "Jupyter", "VS Code", "PyCharm"]]
+    [
+      "ai / ml",
+      ["PyTorch", "TensorFlow", "LangChain", "LangGraph", "OpenCV", "NumPy", "Pandas"]
+    ],
+    [
+      "languages",
+      ["Python", "C++", "TypeScript", "JavaScript", "Bash", "Lua"]
+    ],
+    [
+      "web / cloud",
+      ["FastAPI", "Next.js", "Google Cloud", "AWS"]
+    ],
+    [
+      "robotics",
+      ["ROS 2", "CoppeliaSim", "Arduino", "Qt", "CMake"]
+    ],
+    [
+      "daily",
+      ["Linux", "Git", "Jupyter", "VS Code", "PyCharm"]
+    ]
   ],
   "repos": [
-    {"name": "agent-xray", "lang": "Python",
-     "desc": "Watch any LangGraph app think: a live 3D view of your agent graph, with replay."},
-    {"name": "ScreenSeekeR-Desktop-Automation", "title": "ScreenSeekeR", "lang": "Python",
-     "desc": "Vision-based Windows desktop automation that finds UI elements from plain language."},
-    {"name": "EVER24-Remastered", "lang": "Python",
-     "desc": "The 2024 racing stack rewritten from ROS 1 to ROS 2, package by package."}
+    {
+      "name": "agent-xray",
+      "lang": "Python",
+      "desc": "Watch any LangGraph app think: a live 3D view of your agent graph, with replay."
+    },
+    {
+      "name": "ScreenSeekeR-Desktop-Automation",
+      "title": "ScreenSeekeR",
+      "lang": "Python",
+      "desc": "Vision-based Windows desktop automation that finds UI elements from plain language."
+    },
+    {
+      "name": "EVER24-Remastered",
+      "lang": "Python",
+      "desc": "The 2024 racing stack rewritten from ROS 1 to ROS 2, package by package."
+    }
   ]
 }

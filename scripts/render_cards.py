@@ -183,7 +183,7 @@ def hero():
   <path d="M{tx} {ty + 34}h{tw}" stroke="{LINE}"/>
   <circle cx="{tx + 20}" cy="{ty + 17}" r="5" fill="#ff5f57"/><circle cx="{tx + 38}" cy="{ty + 17}" r="5" fill="#febc2e"/>
   <circle cx="{tx + 56}" cy="{ty + 17}" r="5" fill="{GREEN}"/>
-  <text x="{tx + tw / 2}" y="{ty + 21}" text-anchor="middle" font-family="{MONO}" font-size="11" fill="{MUTED}">ziad@scu: ~</text>
+  <text x="{tx + tw / 2}" y="{ty + 21}" text-anchor="middle" font-family="{MONO}" font-size="11" fill="{MUTED}">ziad@dev: ~</text>
 </g>
 {''.join(lines)}"""
     tag = "".join(
@@ -216,11 +216,11 @@ def role_tile(i, role):
 <g class="u" {at(delay)}>
   <text x="22" y="38" font-family="{MONO}" font-size="11.5" letter-spacing="1.2" fill="{color}">0{i + 1} / {escape(role["label"])}</text>
   <text x="22" y="88" font-family="{DISPLAY}" font-weight="700" font-size="25" letter-spacing="-.5" fill="{TEXT}">{escape(role["title"])}</text>
-  <text x="22" y="114" font-family="{MONO}" font-size="12.5" fill="{MUTED}">@ <tspan fill="{color}">{escape(role["org"])}</tspan></text>
+  <text x="22" y="114" font-family="{MONO}" font-size="12.5" fill="{color}">{escape(role["tools"])}</text>
 </g>
 <g class="i" {at(delay + 0.4)}>{blurb}</g>"""
     write(f"role-{i + 1}.svg", svg(TILE_W, TILE_H, body, ["mono", "disp", "disp-b"],
-                                   f'{role["title"]} at {role["org"]}. {role["blurb"]}',
+                                   f'{role["title"]} ({role["tools"]}). {role["blurb"]}',
                                    left=4 * i, right=8 - 4 * i))
 
 
