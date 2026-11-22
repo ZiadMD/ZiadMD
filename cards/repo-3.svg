@@ -23,10 +23,10 @@
 .rg{opacity:0;transform-box:fill-box;transform-origin:center;animation:ring 1s ease-out both}
 @media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.rg{animation:none!important;opacity:1!important;transform:none!important}.sh,.rg{display:none}}
 </style><g transform="translate(8.000 0)">
-<rect width="285.333" height="176" rx="14" fill="#f3f3f1"/>
+<rect width="285.333" height="176" rx="14" fill="#111214" stroke="#2a2c31"/>
 <g class="r" style="animation-delay:4.84s">
   <rect x="24" y="30" width="8" height="8" rx="2" fill="#ffc81a"/>
-  <text x="40" y="39" font-family="Geist, system-ui, -apple-system, sans-serif" font-weight="600" font-size="18" fill="#111111">EVER24-Remastered</text>
-  <text x="24" y="72" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#3a3a3c">The 2024 racing stack rewritten</text><text x="24" y="93" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#3a3a3c">from ROS 1 to ROS 2, package by</text><text x="24" y="114" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#3a3a3c">package.</text>
-  <text x="24" y="152" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#6e6e73">Python</text>
+  <text x="40" y="39" font-family="Geist, system-ui, -apple-system, sans-serif" font-weight="600" font-size="18" fill="#f2f2ee">EVER24-Remastered</text>
+  <text x="24" y="72" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#c4c4c0">The 2024 racing stack rewritten</text><text x="24" y="93" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#c4c4c0">from ROS 1 to ROS 2, package by</text><text x="24" y="114" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#c4c4c0">package.</text>
+  <text x="24" y="152" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#8a8a90">Python</text>
 </g></g></svg>

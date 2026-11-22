@@ -22,4 +22,4 @@
 .sh{animation:sheen 5s ease-in-out infinite}
 .rg{opacity:0;transform-box:fill-box;transform-origin:center;animation:ring 1s ease-out both}
 @media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.rg{animation:none!important;opacity:1!important;transform:none!important}.sh,.rg{display:none}}
-</style><text class="r" style="animation-delay:5.00s" x="2" y="46" font-family="'Instrument Serif', Georgia, serif" font-size="34" fill="#111111">What I <tspan font-style="italic">use</tspan></text></svg>
+</style><text class="r" style="animation-delay:5.00s" x="2" y="46" font-family="'Instrument Serif', Georgia, serif" font-size="34" fill="#f2f2ee">What I <tspan font-style="italic">use</tspan></text></svg>

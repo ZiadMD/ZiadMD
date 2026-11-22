@@ -2,7 +2,7 @@
 """
 Draw the profile README's cards as animated SVGs into cards/.
 
-Look: paper and ink, one colour per tile (blue, red, yellow), a big serif name
+Look: dark cards and light ink, one colour per tile (blue, red, yellow), a big serif name
 with an italic surname, and an ASCII portrait that prints itself in.
 Fonts: Instrument Serif, Geist and Geist Mono (subset WOFF2s in fonts/, SIL OFL).
 
@@ -32,17 +32,18 @@ PROFILE = json.load(open(os.path.join(ROOT, "data", "profile.json")))
 STATIC = bool(os.environ.get("STATIC"))
 
 # ---- tokens -------------------------------------------------------------------
-PAPER = "#f3f3f1"
-PAPER_DEEP = "#e2e2de"
-INK = "#111111"
-INK_SOFT = "#3a3a3c"
-MUTED = "#6e6e73"
-RULE = "#dcdcd7"
-BLUE = "#2f55ff"
+PAPER = "#111214"        # card surface
+PAPER_DEEP = "#1f2125"   # empty graph cells
+INK = "#f2f2ee"          # main text
+INK_SOFT = "#c4c4c0"
+MUTED = "#8a8a90"
+RULE = "#2a2c31"
+BAR_PARTIAL = "#3a3c42"  # the month still in progress
+BLUE = "#4a6bff"
 RED = "#ef3b2d"
 YELLOW = "#ffc81a"
-TILE_COLORS = [(BLUE, "#ffffff"), (RED, "#ffffff"), (YELLOW, INK)]
-HEAT = [PAPER_DEEP, "#c8d3ff", "#94a8ff", "#6280ff", BLUE, "#1a3be0"]
+TILE_COLORS = [(BLUE, "#ffffff"), (RED, "#ffffff"), (YELLOW, "#111111")]
+HEAT = [PAPER_DEEP, "#1d2b66", "#2a40a3", "#3a5ae0", BLUE, "#9db0ff"]
 
 W = 880          # GitHub's README column at 100%
 GAP = 12         # gap between cards, baked in so rows tile exactly
@@ -177,7 +178,7 @@ def hero():
     {shine}
   </linearGradient>
 </defs>
-<rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
+<rect width="{W}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}"/>
 <g class="f" {at(0)}>
   <rect class="live" x="48" y="49" width="8" height="8" rx="2" fill="{BLUE}"/>
   <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">{escape(p["kicker"])}</text>
@@ -264,7 +265,7 @@ def activity(data):
         cur, longest = data["current_streak"], data["longest_streak"]
         note = "current streak, and the longest" if cur >= longest else f"current streak, longest {longest}"
         stats = [(f'{cur} <tspan font-style="italic">days</tspan>', note),
-                 (f'{data["active_days"]}<tspan fill="#8e8e93"> / {len(data["days"])}</tspan>', "days with a commit"),
+                 (f'{data["active_days"]}<tspan fill="{MUTED}"> / {len(data["days"])}</tspan>', "days with a commit"),
                  (str(data["best_day"]["count"]), "on the busiest day")]
     else:
         m, monthly = datetime.date.today().replace(day=1), []
@@ -283,7 +284,7 @@ def activity(data):
         is_best = m is best and m["total"] > 0
         bh = max(4, round(m["total"] / top * maxh))
         x = x0 + i * (bw + gap)
-        fill = BLUE if is_best else ("#c9c9c4" if partial else INK)
+        fill = BLUE if is_best else (BAR_PARTIAL if partial else INK)
         label = calendar.month_abbr[int(m["month"][5:])]
         dl = 2.2 + i * 0.07
         bars.append(f'<rect class="g" {at(dl)} x="{x:.1f}" y="{base - bh}" width="{bw:.1f}" height="{bh}" rx="4" fill="{fill}">'
@@ -302,7 +303,7 @@ def activity(data):
         if i < 2:
             side.append(f'<rect class="f" {at(2.6)} x="650" y="{y + 44}" width="190" height="1" fill="{RULE}"/>')
     body = f"""
-<rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
+<rect width="{W}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}"/>
 <text class="f" {at(1.9)} x="40" y="58" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">THE LAST 12 MONTHS ON GITHUB</text>
 <text class="r" {at(2.0)} x="38" y="114" font-family="{SERIF}" font-size="52" fill="{INK}">{total} <tspan font-style="italic">contributions</tspan></text>
 {''.join(bars)}
@@ -348,7 +349,7 @@ def heatmap(data):
     h = base + 44
     status = "REFRESHED DAILY" if data else "SYNCING ON FIRST RUN"
     body = f"""
-<rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
+<rect width="{W}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}"/>
 <text class="r" {at(0.8)} x="{gx - 2}" y="62" font-family="{SERIF}" font-size="34" fill="{INK}">Every day, <tspan font-style="italic" fill="{BLUE}">in blue</tspan></text>
 <text class="f" {at(0.8)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">{status}</text>
 {''.join(cells)}
@@ -376,7 +377,7 @@ def repo_card(i, repo, stars):
     name = repo.get("title", repo["name"])
     meta = f'{repo["lang"]}  ·  ★ {stars}' if stars else repo["lang"]
     body = f"""
-<rect width="{REPO_W:.3f}" height="{REPO_H}" rx="14" fill="{PAPER}"/>
+<rect width="{REPO_W:.3f}" height="{REPO_H}" rx="14" fill="{PAPER}" stroke="{RULE}"/>
 <g class="r" {at(4.6 + i * 0.12)}>
   <rect x="24" y="30" width="8" height="8" rx="2" fill="{color}"/>
   <text x="40" y="39" font-family="{SANS}" font-weight="600" font-size="18" fill="{INK}">{escape(name)}</text>
@@ -401,7 +402,7 @@ def stack():
             rows.append(f'<rect class="f" {at(5.2)} x="24" y="{y + 36}" width="{W - 48}" height="1" fill="{RULE}"/>')
         y += 46
     h = y + 22
-    body = f'<rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>{"".join(rows)}'
+    body = f'<rect width="{W}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}"/>{"".join(rows)}'
     flat = "; ".join(f"{g}: {', '.join(i)}" for g, i in groups)
     write("stack.svg", svg(W, h, body, ["sans", "mono"], f"Tech stack. {flat}"))
 

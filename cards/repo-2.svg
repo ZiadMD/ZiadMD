@@ -23,10 +23,10 @@
 .rg{opacity:0;transform-box:fill-box;transform-origin:center;animation:ring 1s ease-out both}
 @media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.rg{animation:none!important;opacity:1!important;transform:none!important}.sh,.rg{display:none}}
 </style><g transform="translate(4.000 0)">
-<rect width="285.333" height="176" rx="14" fill="#f3f3f1"/>
+<rect width="285.333" height="176" rx="14" fill="#111214" stroke="#2a2c31"/>
 <g class="r" style="animation-delay:4.72s">
   <rect x="24" y="30" width="8" height="8" rx="2" fill="#ef3b2d"/>
-  <text x="40" y="39" font-family="Geist, system-ui, -apple-system, sans-serif" font-weight="600" font-size="18" fill="#111111">ScreenSeekeR</text>
-  <text x="24" y="72" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#3a3a3c">Vision-based Windows desktop</text><text x="24" y="93" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#3a3a3c">automation that finds UI elements</text><text x="24" y="114" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#3a3a3c">from plain language.</text>
-  <text x="24" y="152" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#6e6e73">Python</text>
+  <text x="40" y="39" font-family="Geist, system-ui, -apple-system, sans-serif" font-weight="600" font-size="18" fill="#f2f2ee">ScreenSeekeR</text>
+  <text x="24" y="72" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#c4c4c0">Vision-based Windows desktop</text><text x="24" y="93" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#c4c4c0">automation that finds UI elements</text><text x="24" y="114" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#c4c4c0">from plain language.</text>
+  <text x="24" y="152" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#8a8a90">Python</text>
 </g></g></svg>
