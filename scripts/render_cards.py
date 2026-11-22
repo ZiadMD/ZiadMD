@@ -154,8 +154,8 @@ def hero():
     h = 420
     rows = portrait_rows()
     # portrait box on the right, rows centred vertically
-    box_x, box_y, box_w, box_h = 528, 60, 316, 316
-    cw = box_w / 110             # make_portrait.py writes 110 columns
+    box_x, box_y, box_w, box_h = 500, 28, 352, 364
+    cw = box_w / max((len(r) for r in rows), default=1)
     lh = cw * 1.9
     y0 = box_y + (box_h - len(rows) * lh) / 2 + lh * .8
     art = []
