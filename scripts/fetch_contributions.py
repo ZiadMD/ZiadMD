@@ -2,7 +2,8 @@
 """
 Read the daily contribution counts GitHub already serves for the profile calendar
 (github.com/users/<name>/contributions, public, no token) and write
-data/contributions.json: the raw days plus streaks, best day and monthly totals.
+data/contributions.json: the current calendar year's days plus totals, best day and
+monthly totals, with streaks taken from the rolling 12 months.
 
 Run daily by .github/workflows/update-cards.yml, before render_cards.py.
 """
@@ -21,8 +22,12 @@ USER = os.environ.get("GH_USER", PROFILE["username"])
 OUT = os.path.join(ROOT, "data", "contributions.json")
 
 
-def fetch_days():
+def fetch_days(year=None):
+    """Without a year: GitHub's default rolling 12 months, ending today.
+    With a year: that calendar year, Jan 1 to Dec 31 (days after today count 0)."""
     url = f"https://github.com/users/{USER}/contributions"
+    if year:
+        url += f"?from={year}-01-01&to={year}-12-31"
     resp = requests.get(url, headers={"User-Agent": "profile-cards/1.0"}, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
@@ -56,26 +61,34 @@ def streaks(days):
     return end - i, longest
 
 
-def summarize(days):
-    cur, longest = streaks(days)
+def summarize(rolling, days):
+    """The cards show the calendar year in `days`; streaks come from the rolling
+    window so they don't reset on Jan 1."""
+    today = rolling[-1]["date"]  # GitHub's own "today"
+    cur, longest = streaks(rolling)
+    so_far = [d for d in days if d["date"] <= today]
     monthly = {}
     for d in days:
         monthly[d["date"][:7]] = monthly.get(d["date"][:7], 0) + d["count"]
     return {
         "username": USER,
         "generated_at": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "total": sum(d["count"] for d in days),
-        "active_days": sum(1 for d in days if d["count"]),
+        "year": int(today[:4]),
+        "today": today,
+        "total": sum(d["count"] for d in so_far),
+        "active_days": sum(1 for d in so_far if d["count"]),
+        "days_so_far": len(so_far),
         "current_streak": cur,
         "longest_streak": longest,
-        "best_day": max(days, key=lambda d: d["count"]),
+        "best_day": max(so_far, key=lambda d: d["count"]),
         "monthly": [{"month": k, "total": v} for k, v in sorted(monthly.items())],
         "days": days,
     }
 
 
 if __name__ == "__main__":
-    data = summarize(fetch_days())
+    rolling = fetch_days()
+    data = summarize(rolling, fetch_days(int(rolling[-1]["date"][:4])))
     with open(OUT, "w") as f:
         json.dump(data, f, indent=1)
     print(f"{data['total']} contributions, streak {data['current_streak']}, longest {data['longest_streak']}")

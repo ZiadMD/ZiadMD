@@ -259,32 +259,34 @@ def tile(i, t, live):
 # ---- activity -----------------------------------------------------------------
 def activity(data):
     h = 340
+    year = data["year"] if data else datetime.date.today().year
+    now = data["today"][:7] if data else datetime.date.today().strftime("%Y-%m")
     if data:
-        monthly = data["monthly"][-12:]
+        monthly = data["monthly"]
         total = f'{data["total"]:,}'
         cur, longest = data["current_streak"], data["longest_streak"]
         note = "current streak, and the longest" if cur >= longest else f"current streak, longest {longest}"
         stats = [(f'{cur} <tspan font-style="italic">days</tspan>', note),
-                 (f'{data["active_days"]}<tspan fill="{MUTED}"> / {len(data["days"])}</tspan>', "days with a commit"),
+                 (f'{data["active_days"]}<tspan fill="{MUTED}"> / {data["days_so_far"]}</tspan>', "days with a commit"),
                  (str(data["best_day"]["count"]), "on the busiest day")]
     else:
-        m, monthly = datetime.date.today().replace(day=1), []
-        for _ in range(12):
-            monthly.insert(0, {"month": m.strftime("%Y-%m"), "total": 0})
-            m = (m - datetime.timedelta(days=1)).replace(day=1)
+        monthly = [{"month": f"{year}-{k:02d}", "total": 0} for k in range(1, 13)]
         total = "--"
         stats = [("--", "current streak"), ("--", "days with a commit"), ("--", "on the busiest day")]
-    best = max(monthly[:-1] or monthly, key=lambda m: m["total"])
-    top = max(best["total"], monthly[-1]["total"], 1)
+    done = [m for m in monthly if m["month"] < now]  # finished months; the current one is partial
+    current = next((m for m in monthly if m["month"] == now), {"total": 0})
+    best = max(done or monthly, key=lambda m: m["total"])
+    top = max(best["total"], current["total"], 1)
     x0, x1, base, maxh, gap = 40, 600, 292, 140, 10
     bw = (x1 - x0 - gap * (len(monthly) - 1)) / len(monthly)
     bars = []
     for i, m in enumerate(monthly):
-        partial = i == len(monthly) - 1
+        partial = m["month"] == now
+        future = m["month"] > now
         is_best = m is best and m["total"] > 0
         bh = max(4, round(m["total"] / top * maxh))
         x = x0 + i * (bw + gap)
-        fill = BLUE if is_best else (BAR_PARTIAL if partial else INK)
+        fill = PAPER_DEEP if future else BLUE if is_best else (BAR_PARTIAL if partial else INK)
         label = calendar.month_abbr[int(m["month"][5:])]
         dl = 2.2 + i * 0.07
         bars.append(f'<rect class="g" {at(dl)} x="{x:.1f}" y="{base - bh}" width="{bw:.1f}" height="{bh}" rx="4" fill="{fill}">'
@@ -304,12 +306,12 @@ def activity(data):
             side.append(f'<rect class="f" {at(2.6)} x="650" y="{y + 44}" width="190" height="1" fill="{RULE}"/>')
     body = f"""
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}"/>
-<text class="f" {at(1.9)} x="40" y="58" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">THE LAST 12 MONTHS ON GITHUB</text>
+<text class="f" {at(1.9)} x="40" y="58" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">{year} ON GITHUB</text>
 <text class="r" {at(2.0)} x="38" y="114" font-family="{SERIF}" font-size="52" fill="{INK}">{total} <tspan font-style="italic">contributions</tspan></text>
 {''.join(bars)}
 {''.join(side)}"""
     write("activity.svg", svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
-                              f"{total} contributions in the last 12 months"))
+                              f"{total} contributions in {year}"))
 
 
 # ---- contribution graph -------------------------------------------------------
@@ -318,12 +320,17 @@ def level(c):
 
 
 def placeholder_days():
-    end = datetime.date.today()
-    return [{"date": (end - datetime.timedelta(days=k)).isoformat(), "count": 0} for k in range(370, -1, -1)]
+    d, days = datetime.date(datetime.date.today().year, 1, 1), []
+    while d.year == datetime.date.today().year:
+        days.append({"date": d.isoformat(), "count": 0})
+        d += datetime.timedelta(days=1)
+    return days
 
 
 def heatmap(data):
     days = data["days"] if data else placeholder_days()
+    today = data["today"] if data else datetime.date.today().isoformat()
+    year = days[0]["date"][:4]
     first = datetime.date.fromisoformat(days[0]["date"])
     lead = (first.weekday() + 1) % 7  # sunday on top, like GitHub
     cell, step, gy = 12, 15, 96
@@ -337,26 +344,31 @@ def heatmap(data):
             seen.add((date.year, date.month))
             months.append((col, date.strftime("%b")))
         c = day["count"]
-        cells.append(f'<rect class="p" {at(1.0 + col * 0.03 + row * 0.02)} x="{gx + col * step}" y="{gy + row * step}" '
-                     f'width="{cell}" height="{cell}" rx="3" fill="{HEAT[level(c)]}">'
-                     f'<title>{day["date"]}: {c} contribution{"" if c == 1 else "s"}</title></rect>')
+        future = day["date"] > today  # rest of the year: outlined, not yet filled
+        fill = f'fill="none" stroke="{PAPER_DEEP}"' if future else f'fill="{HEAT[level(c)]}"'
+        title = "" if future else f'<title>{day["date"]}: {c} contribution{"" if c == 1 else "s"}</title>'
+        cells.append(f'<rect class="p" {at(1.0 + col * 0.03 + row * 0.02)} x="{gx + col * step + (0.5 if future else 0)}" '
+                     f'y="{gy + row * step + (0.5 if future else 0)}" width="{cell - (1 if future else 0)}" '
+                     f'height="{cell - (1 if future else 0)}" rx="3" {fill}>{title}</rect>')
     right = gx + ncols * step - 3
     base = gy + 7 * step
     labels = "".join(f'<text x="{gx + col * step}" y="{base + 16}" font-family="{MONO}" font-size="11" fill="{MUTED}">{m}</text>'
-                     for col, m in months if col < ncols - 12)
+                     for col, m in months if col < ncols - 2)
+    # legend sits on its own line under the month labels, so every month keeps its label
     lx = right - len(HEAT) * 14
-    legend = "".join(f'<rect x="{lx + i * 14}" y="{base + 6}" width="11" height="11" rx="2.5" fill="{c}"/>' for i, c in enumerate(HEAT))
-    h = base + 44
-    status = "REFRESHED DAILY" if data else "SYNCING ON FIRST RUN"
+    ly = base + 26
+    legend = "".join(f'<rect x="{lx + i * 14}" y="{ly + 6}" width="11" height="11" rx="2.5" fill="{c}"/>' for i, c in enumerate(HEAT))
+    h = ly + 44
+    status = f"{year} &#183; REFRESHED DAILY" if data else f"{year} &#183; SYNCING ON FIRST RUN"
     body = f"""
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}" stroke="{RULE}"/>
 <text class="r" {at(0.8)} x="{gx - 2}" y="62" font-family="{SERIF}" font-size="34" fill="{INK}">Every day, <tspan font-style="italic" fill="{BLUE}">in blue</tspan></text>
 <text class="f" {at(0.8)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">{status}</text>
 {''.join(cells)}
 <g class="f" {at(2.4)}>{labels}
-<text x="{lx - 8}" y="{base + 16}" text-anchor="end" font-family="{MONO}" font-size="11" fill="{MUTED}">less</text>{legend}
-<text x="{lx + len(HEAT) * 14 + 2}" y="{base + 16}" font-family="{MONO}" font-size="11" fill="{MUTED}">more</text></g>"""
-    total = f'{data["total"]:,} contributions in the last year' if data else "syncing"
+<text x="{lx - 8}" y="{ly + 16}" text-anchor="end" font-family="{MONO}" font-size="11" fill="{MUTED}">less</text>{legend}
+<text x="{lx + len(HEAT) * 14 + 2}" y="{ly + 16}" font-family="{MONO}" font-size="11" fill="{MUTED}">more</text></g>"""
+    total = f'{data["total"]:,} contributions in {year}' if data else "syncing"
     write("heatmap.svg", svg(W, h, body, ["serif", "serif-i", "mono"], f"Contribution graph: {total}"))
 
 
