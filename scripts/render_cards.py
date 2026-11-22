@@ -111,8 +111,10 @@ def at(s):
 
 
 def wrap(text, n):
+    """Greedy wrap at n characters. A non-breaking space (\u00a0) keeps two words together."""
     lines, line = [], ""
-    for word in text.split():
+    for word in text.replace("\u00a0", "\x00").split():
+        word = word.replace("\x00", " ")
         if line and len(line) + 1 + len(word) > n:
             lines.append(line)
             line = word
