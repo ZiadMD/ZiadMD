@@ -3,7 +3,7 @@
      Spacing is baked into the SVGs: keep this block free of blank lines, and keep each
      row of three cards on one line with no spaces between them. -->
 <div align="center">
-<a href="https://github.com/ZiadMD"><img src="./cards/hero.svg" width="100%" alt="Ziad Mohamed. AI engineer. I build AI agents that do real work, and the tools that show how they think." /></a><br>
+<a href="https://ziad-sheashaa.md"><img src="./cards/hero.svg" width="100%" alt="Ziad Mohamed. AI engineer. I build AI agents that do real work, and the tools that show how they think." /></a><br>
 <img src="./cards/heatmap.svg" width="100%" alt="Ziad's contribution graph, in blue, refreshed daily" /><br>
 <img src="./cards/activity.svg" width="100%" alt="Contributions in the last 12 months, by month, with streak and busiest day" /><br>
 <a href="https://github.com/ZiadMD?tab=repositories"><img src="./cards/tile-1.svg" width="33.333%" alt="BUILD: public repos" /></a><a href="https://github.com/ZiadMD"><img src="./cards/tile-2.svg" width="33.333%" alt="SHIP: commits in the last 12 months" /></a><a href="https://github.com/ZiadMD/agent-xray"><img src="./cards/tile-3.svg" width="33.333%" alt="FOCUS: LLM agents, computer vision and production AI" /></a><br>
@@ -14,5 +14,5 @@
 </div>
 
 <p align="center">
-<a href="https://www.linkedin.com/in/ziad-sheashaa-89797b15b/">linkedin</a> &nbsp;/&nbsp; <a href="https://www.instagram.com/ziad._.moh/">instagram</a> &nbsp;/&nbsp; <a href="https://www.facebook.com/ziad.mohamed.gamal.792281">facebook</a> &nbsp;/&nbsp; <a href="https://discordapp.com/users/_pymage_">discord</a> &nbsp;/&nbsp; <a href="mailto:ziadmohamedgamal25@gmail.com">email</a>
+<a href="https://ziad-sheashaa.md">ziad-sheashaa.md</a> &nbsp;/&nbsp; <a href="https://www.linkedin.com/in/ziad-sheashaa-89797b15b/">linkedin</a> &nbsp;/&nbsp; <a href="https://www.instagram.com/ziad._.moh/">instagram</a> &nbsp;/&nbsp; <a href="https://www.facebook.com/ziad.mohamed.gamal.792281">facebook</a> &nbsp;/&nbsp; <a href="https://discordapp.com/users/_pymage_">discord</a> &nbsp;/&nbsp; <a href="mailto:ziadmohamedgamal25@gmail.com">email</a>
 </p>
